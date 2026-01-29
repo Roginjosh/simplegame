@@ -1,1 +1,52 @@
-{}
+{
+  "sword_of_compensation": {
+    "name": "Massive Sword of Compensation",
+    "slot": "main_hand",
+    "rarity": "common",
+    "tags": [
+      "weapon",
+      "sword"
+    ],
+    "stats": {},
+    "weapon": {
+      "damage_type": "phys",
+      "base_damage": 3
+    }
+  },
+  "leather_chinstrap": {
+    "name": "Chinstrap of Glory",
+    "slot": "head",
+    "rarity": "common",
+    "tags": [
+      "armor",
+      "helmet"
+    ],
+    "stats": {
+      "armor": 3
+    }
+  },
+  "leather_chestplate": {
+    "name": "Leather Chestplate",
+    "slot": "chest",
+    "rarity": "common",
+    "tags": [
+      "armor",
+      "chestplate"
+    ],
+    "stats": {
+      "armor": 10
+    }
+  },
+  "leather_pants": {
+    "name": "Leather Pantaloons",
+    "slot": "legs",
+    "rarity": "common",
+    "tags": [
+      "armor",
+      "legs"
+    ],
+    "stats": {
+      "armor": 6
+    }
+  }
+}
