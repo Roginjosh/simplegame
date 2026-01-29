@@ -1,59 +1,35 @@
+import os
+from character import Character
+from premades import goblin_fighters
+from gear import Gear
 
-class Gear:
-    def __init__(self, name, tags, stats):
-        self.name = name
-        self.tags = tags
-        self.stats = stats
-    
-    def __str__(self):
-        return self.name
+def show(a, b):
+    print(a)
+    print(b)
 
-class Character:
-    def __init__(self, name, stats):
-        self.name = name
-        self.stats = stats
-        self.gear = {
-            "head":"",
-            "chest":"",
-            "legs":"",
-            "boots":"",
-            "left hand":"",
-            "right hand":"",
-        }
-        self.health = self.stats["max_health"]
-    def equip_item(self, item):
-        tags = item.tags
-        free_slot = True
-        for i in tags:
-            if self.gear[i] != "":
-                free_slot = False
-        if free_slot:
-            for i in tags:
-                self.gear[i] = item
-
-        
-    def make_attack(self):
-        pass
-
-    def __str__(self):
-        return f'Name: {self.name}\nHP: {self.health}/{self.stats["max_health"]}\n\
-Gear:\n\
-Helm: {self.gear['head']}\n\
-Chest: {self.gear['chest']}\n\
-Legs: {self.gear['legs']}\n\
-Boots: {self.gear['boots']}\n\
-Main Hand: {self.gear['right hand']}\n\
-Offhand: {self.gear['left hand']}\n\
-'
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def main():
-    Josh = Character("Josh", {"max_health":100})
+    Josh = Character("Josh", {"max_health":100, "strength":70})
     sword = Gear("Sword of Compensation", ["right hand"], {"damage":3,"type":"physical"})
-    print(Josh)
-
     Josh.equip_item(sword)
-    print(Josh)
+    enemy = goblin_fighters[0]
+
+    show(Josh, enemy)
+
+    while Josh.health > 0 and enemy.health > 0:
+        input("Whatcha gonna do?\n")
+        enemy.take_damage(Josh.make_attack())
+        Josh.take_damage(enemy.make_attack())
+        clear_screen()
+        show(Josh, enemy)
+    
+    if Josh.health > 0:
+        print(f"Triumph! {Josh.name} the MIGHTY! May his foe rest in pieces.")
+    else:
+        print(f"Woe, for the just and righteous have fallen today.")
 
 if __name__ == "__main__":
     main()
