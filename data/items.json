@@ -48,5 +48,17 @@
     "stats": {
       "armor": 6
     }
+  },
+  "leather_boots": {
+    "name": "Leather Booties",
+    "slot": "feet",
+    "rarity": "common",
+    "tags": [
+      "armor",
+      "boots"
+    ],
+    "stats": {
+      "armor": 2
+    }
   }
 }
