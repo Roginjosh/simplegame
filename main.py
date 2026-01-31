@@ -28,10 +28,10 @@ def clear_screen():
 
 def main():
     josh_stats = {
-    "STR":50,
+    "STR":70,
     "DEX":50,
     "END":50,
-    "VIT":50,
+    "VIT":100,
     "WIS":50,
     "INT":50,
 }  
